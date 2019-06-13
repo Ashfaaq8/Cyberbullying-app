@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mobile App</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js"
+    integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ=="
+    crossorigin=""></script>
+
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
+    crossorigin="">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
+    crossorigin="">
+</script>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js">
+
+</script>
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+</head>
+<body>
+
+	<script>
+		function callindex(){
+		window.located.href="index.html";
+		}
+		</script>
+
+	<script>
+	function callgeo(){
+		window.location.href="MYGEO.html";
+	}
+	
+	</script>
+	
+	<script>
+	function call(){
+	 window.location.href="call.html";
+	 }
+	 </script>
+	 
+	 <script>
+	 function callquiz(){
+	 window.location.href="quiz.html";
+	 }
+	 </script>
+	 
+	 <script>
+	 function callsave(){
+	 window.location.href="incidentForm.html";		 
+	}
+	
+</script>
+
+<script>
+function callsearch(){
+window.location.href="youtube/searchyoutube.html";
+}
+</script>
+
+
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-home" onclick="callindex()">Home</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-grid" onclick="callgeo()">Geolocation</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="call()">Emergency Call</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callquiz()">Quiz</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callsave()">Save an Incident</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callsearch()">Search Videos</a></li>
+				
+				
+			</ul>
+		</div>
+<div id="mapid" style="width: 600px; height: 400px;"></div>
+<script>
+ if(navigator.geolocation==undefined){
+                           alert("Geolocation undefined");
+ 
+              }else{
+                           alert("Geolocation Available");
+                           navigator.geolocation.getCurrentPosition(userLocated,locationError);
+                           
+                           function userLocated(position){
+                                         var latitude=position.coords.latitude;
+                                         var longitude=position.coords.longitude;
+                                         alert("Lat:" + latitude +", Long:" + longitude);
+										 var mymap = L.map('mapid').setView([latitude, longitude], 13);
+										 
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+maxZoom: 19,
+attribution: 'Map data &copy;'+
+'<a href="https://www.openstreetmap.org/">OpenStreetMap</a>'+
+'contributors,<a href="https://creativecommons.org/licenses'+
+'/by-sa/2.0/">CC-BY-SA</a>,Imagery © <a href="https://'+
+'www.mapbox.com/">Mapbox</a>',
+id: 'mapbox.streets',
+accessToken:'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYyc'+
+'XBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+}).addTo(mymap);
+
+var marker = L.marker([-20.163158, 57.482724]).addTo(mymap);
+marker.bindPopup("Bain des Dames").openPopup();
+var marker = L.marker([-20.164322, 57.497799]).addTo(mymap);
+marker.bindPopup("Line Barracks Police Station").openPopup();
+var marker = L.marker([-20.166347, 57.498830]).addTo(mymap);
+marker.bindPopup("Police IT Unit").openPopup();
+var marker = L.marker([-20.164708, 57.505051]).addTo(mymap);
+marker.bindPopup("Pope Hennessy Station").openPopup();
+var marker = L.marker([-20.156859, 57.506112]).addTo(mymap);
+marker.bindPopup("Trou Fanfaron Police Station").openPopup();
+var marker = L.marker([-20.159730, 57.512731]).addTo(mymap);
+marker.bindPopup("Plaine Verte Police Station").openPopup();
+var marker = L.marker([-20.145923, 57.505230]).addTo(mymap);
+marker.bindPopup("Roche Bois Police Station").openPopup();
+var marker = L.marker([-20.146923, 57.523218]).addTo(mymap);
+marker.bindPopup("Abercombie police station").openPopup();
+var marker = L.marker([-20.197190, 57.468310]).addTo(mymap);
+marker.bindPopup("Coromandel Police Station").openPopup();
+var marker = L.marker([-20.223073, 57.503900]).addTo(mymap);
+marker.bindPopup("Moka Police Station").openPopup();
+var marker = L.marker([-20.243861, 57.477148]).addTo(mymap);
+marker.bindPopup("Rose-Hill Police Station").openPopup();
+var marker = L.marker([-20.270110, 57.475865]).addTo(mymap);
+marker.bindPopup("Quatre Bornes Police Station").openPopup();
+var marker = L.marker([-20.286683, 57.508322]).addTo(mymap);
+marker.bindPopup("Phoenix Police Station").openPopup();
+var marker = L.marker([-20.318994, 57.523022]).addTo(mymap);
+marker.bindPopup("Curepipe Police Station").openPopup();
+var marker = L.marker([-20.278794, 57.367863]).addTo(mymap);
+marker.bindPopup("Flic En Flac Police Station").openPopup();
+var marker = L.marker([-20.362369, 57.371966]).addTo(mymap);
+marker.bindPopup("Poste de Police").openPopup();
+var marker = L.marker([-20.246314, 57.596997]).addTo(mymap);
+marker.bindPopup("Quartier Militaire Police Station").openPopup();
+var marker = L.marker([-20.256350, 57.757026]).addTo(mymap);
+marker.bindPopup("Bel Air Police Station").openPopup();
+var marker = L.marker([-20.126207, 57.497727]).addTo(mymap);
+marker.bindPopup("Tombeau Bay Police Station").openPopup();
+var marker = L.marker([-20.127292, 57.532143]).addTo(mymap);
+marker.bindPopup("Terre Rouge Police Station").openPopup();
+var marker = L.marker([-20.166568, 57.504872]).addTo(mymap);
+marker.bindPopup("National Computer Board").openPopup();
+var marker = L.marker([-20.097764, 57.630031]).addTo(mymap);
+marker.bindPopup("Piton Police Headquarters").openPopup();
+var marker = L.marker([-20.063202, 57.581124]).addTo(mymap);
+marker.bindPopup("Plaine Des Papayes Police Station").openPopup();
+var marker = L.marker([-20.420467, 57.493545]).addTo(mymap);
+marker.bindPopup("Grand-Bassin Police Post").openPopup();
+var marker = L.marker([-20.504327, 57.402609]).addTo(mymap);
+marker.bindPopup("Police Station Bel Ombre").openPopup();
+var marker = L.marker([-20.491561, 57.468262]).addTo(mymap);
+marker.bindPopup("Chemin-Grenier Police Station").openPopup();
+var marker = L.marker([-20.431365, 57.658069]).addTo(mymap);
+marker.bindPopup("Plaine Magnein Police Station").openPopup();
+var marker = L.marker([-20.487841, 57.557231]).addTo(mymap);
+marker.bindPopup("Riviere Des Anguilles Police Station").openPopup();
+var marker = L.marker([-20.014927, 57.583227]).addTo(mymap);
+marker.bindPopup("Grand Bay Police Station").openPopup();
+var marker = L.marker([-20.037312, 57.649461]).addTo(mymap);
+marker.bindPopup("Goodlands Police Station").openPopup();
+var marker = L.marker([latitude, longitude]).addTo(mymap);
+marker.bindPopup("My location").openPopup();                                                                    
+
+
+ var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
+
+  var results = L.layerGroup().addTo(mymap);
+
+  searchControl.on('results', function(data){
+    results.clearLayers();
+    for (var i = data.results.length - 1; i >= 0; i--) {
+      results.addLayer(L.marker(data.results[i].latlng));
+    }
+ });
+                         }
+						   }
+						   
+						   
+ 
+                           function locationError(error){
+                                         switch(error.code){
+                                                       case error.PERMISSION_DENIED:
+                                                          alert("Permission Denied-" + error.message);
+                                                          break;
+                                                       case error.POSITION_UNAVAILABLE:
+                                                          alert("Position not Available- "+ error.message);
+                                                          break;
+                                                       case error.TIMEOUT:
+                                                          alert("Request Timed Out- " + error.message);
+                                                          break;
+                                                          }
+ 
+                           }
+                           
+ 
+              
+			  
+
+
+
+
+
+
+ 
+</script>
+
+</div>
+<br> </br>
+ <div data-role="footer">
+   <h1> Map</h1>
+</div>
+</body>
+</html>

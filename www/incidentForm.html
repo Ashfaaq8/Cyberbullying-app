@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+
+ 
+
+<head>
+
+   <title> Report Incident </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+
+<script src="js/jquery.js"></script>
+
+<script src="js/jquery.mobile-1.4.5.js"></script>
+
+ 
+
+<script type="text/javascript">
+
+ 
+
+  function submitForm(){
+
+    var name=$('[name="name"]').val();
+
+    var email=$('[name="email"]').val();
+	
+	var phone=$('[name="phone"]').val();
+	
+	var address=$('[name="address"]').val();
+	
+	var i_date=$('[name="i_date"]').val();
+	
+    var descript=$('[name="descript"]').val();
+ 
+
+    window.localStorage.setItem("name",name);
+
+    window.localStorage.setItem("email",email);
+	
+	window.localStorage.setItem("phone",phone);
+	
+	window.localStorage.setItem("address",address);
+	
+	window.localStorage.setItem("i_date",i_date);
+	
+	window.localStorage.setItem("descript",descript);
+
+ 
+
+    $.mobile.changePage("#pagetwo",{reverse:false,transition:"slide"});
+
+ 
+
+    return false;
+
+ 
+
+  }
+ function clear(){
+ window.localStorage.removeItem('name');
+window.localStorage.removeItem('email');
+window.localStorage.removeItem('phone');
+window.localStorage.removeItem('address');
+window.localStorage.removeItem('i_date');
+window.localStorage.removeItem('descript');
+}
+
+</script>
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+   <!-- Page One-->
+
+  <div data-role="page" id="pageone" data-them="a">
+
+    <div data-role="header">
+
+        <h1>Report Incident</h1>
+
+      </div>
+	  
+	  <script>
+		function callindex(){
+		window.located.href="index.html";
+		}
+		</script>
+		
+		<script>
+	function callgeo(){
+		window.location.href="MYGEO.html";
+	}
+	
+	</script>
+	
+	<script>
+	function call(){
+	 window.location.href="call.html";
+	 }
+	 </script>
+	 
+	 <script>
+	 function callquiz(){
+	 window.location.href="quiz.html";
+	 }
+	 </script>
+	 
+	 <script>
+	 function callsave(){
+	 window.location.href="incidentForm.html";		 
+	}
+	
+</script>
+
+<script>
+function callsearch(){
+window.location.href="youtube/searchyoutube.html";
+}
+</script>
+
+
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-home" onclick="callindex()">Home</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-grid" onclick="callgeo()">Geolocation</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="call()">Emergency Call</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callquiz()">Quiz</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callsave()">Save an Incident</a></li>
+				<li><a href="#" class="ui-btn ui-btn-icon-top ui-icon-info" onclick="callsearch()">Search Videos</a></li>
+				
+				
+			</ul>
+		</div>
+
+ 
+
+  <div data-role="main" class="ui-content">
+
+ 
+
+      <form method="post" onSubmit="return submitForm()">
+
+ 
+
+        <label class="ui-hidden-accessible">Full Name</label>
+
+             <input name="name" type="text" placeholder="Full Name"/>
+
+ 
+
+        <label class="ui-hidden-accessible">Email Address</label>
+
+        <input name="email" type="text" placeholder="Email Address"/>
+		
+		
+		
+		<label class="ui-hidden-accessible">Phone Number</label>
+
+        <input name="phone" type="text" placeholder="Phone Number"/>
+		
+		
+		
+		<label class="ui-hidden-accessible">Address</label>
+
+        <input name="address" type="text" placeholder="Address"/>
+		
+		<label class="ui-hidden-accessible">Date</label>
+
+        <input name="i_date" type="date" placeholder="Incident date"/>
+		
+		
+		<label class="ui-hidden-accessible">Incident Description</label>
+
+        <textarea rows="4" cols="50" name ="descript" placeholder="Describe Your Incident"></textarea>
+		
+ 
+
+      <input type="submit" value="Submit"/>
+   
+<button type="submit" value="clear" onclick= "clear()">Clear</button>
+
+     <button><a href="#pagetwo">View Reports</a></button>
+
+      </form>
+
+  </div>  
+
+ 
+
+ 
+ 
+
+  </div>
+
+  <!--/End of Page One-->
+
+ 
+
+   <!--Page two-->
+
+    <div data-role="page" id="pagetwo" data-them="b">
+
+    <div data-role="header">
+
+        <h1>Stored Incidents</h1>
+
+      </div>
+
+ 
+
+    <div data-role="main" class="ui-content">
+<div id="output"></div>
+<script type="text/javascript">
+$('#output').html("Full Name:"+window.localStorage.getItem("name")+"<br>Email Address:"+window.localStorage.getItem("email")+"<br>Phone Number:"+window.localStorage.getItem("phone")
++"<br>Address:"+window.localStorage.getItem("address")+"<br>Incident Date:"+window.localStorage.getItem("i_date")+"<br>Incident Description:"+window.localStorage.getItem("descript"));
+
+</script>
+
+ 
+
+ 
+
+  <div data-role="main" class="ui-content">
+
+ <button><a href="#pageone">Go Back</a></button>
+
+  </div> 
+
+ 
+
+     
+
+ 
+
+ 
+
+  </div>
+
+   <!--End of Page two-->
+
+</body>
+
+</html>

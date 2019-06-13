@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.gs.calc" version="1.0.0" versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Phone Call</name>
+    <description>
+      Calling Number 
+  </description>
+    <author email="ashfaaq.p.m@gmail.com" href="https://build.phonegap.com">
+      Purahoo Mohamad Ashfaaq
+  </author>
+
+   <plugin name="cordova-plugin-call-number" spec="https://github.com/ihadeed/cordova-plugin-call-number" source="git" />
+ 
+</widget>

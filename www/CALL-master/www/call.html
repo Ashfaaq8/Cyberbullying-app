@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<!-- <script type="text/javascript" src="Calculator.js"></script> -->
+
+
+
+<script type="text/javascript">
+	
+function onSuccess(result){
+  console.log("Success:"+result);
+}
+
+function onError(result) {
+  console.log("Error:"+result);
+}
+
+function onCall(){
+	window.plugins.CallNumber.callNumber(onSuccess, onError, "2119114", true);
+	
+}
+
+
+	function onCall2(){
+	window.plugins.CallNumber.callNumber(onSuccess, onError, "8002378", true);
+	
+}
+	function GetNumber(){
+				var e = document.getElementById("number");
+				var result = e.options[e.selectedIndex].value;
+				
+				document.getElementById("result").innerHTML = result;
+			}
+	function onCall3(){
+		var e = document.getElementById("number");
+				var result = e.options[e.selectedIndex].value;
+				
+				
+	window.plugins.CallNumber.callNumber(onSuccess, onError, result , true);
+	
+}
+	
+	function onCall4(){
+	window.plugins.CallNumber.callNumber(onSuccess, onError, "8009393", true);
+	
+}
+
+	
+	
+</script>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+
+</head>
+<body>
+
+	
+<div data-role="page" id="pageone" data-theme='a'>
+ <div data-role="header">
+ <h1>Call </h1>
+ </div>
+	
+ <div data-role="main" class="ui-content">
+ <button class="ui-btn" onclick="onCall()" style="background-color: yellow ;">Call Cybercrime Unit</button>
+ <button class="ui-btn" onclick="onCall2()" style="background-color: cyan ;">Call Computer Emergency Response</button>
+	 
+	 <select id="number">
+  <option value="2400722">Abercrombie Police Station</option>
+  <option value=" 2384631">Albion Police Station</option>
+  <option value="2100473">Bain des Dames Police Station</option>
+  <option value="4520870">Bambous Police Station</option>
+  <option value="4540376">Barkly Police Station</option>
+  <option value="4545422">Beau Bassin Police Station</option>
+  <option value="4192421">Bel Air Riviere Seche Police Station</option>
+  <option value="6225303"> Bel Ombre Police Station</option>
+  <option value="4152116">Belle Mare Police Station</option>
+  <option value="4836536">Black River Police Station</option>
+  <option value="6313254">Blue Bay Police Station</option>
+  <option value="4183564">Brisee Verdiere Police Station</option 
+  <option value="4651690">Brown Sequard Hospital Police Post</option>
+  <option value="4166719">Camp de Masque Police Station</option>
+  <option value="6262736">Camp Diable Police Station</option>
+  <option value="4651170">Camp le Vieux Police Station</option>
+  <option value="6335063">Cent Gaulettes Police Station</option>
+  <option value="2121955">Central Market Police Post</option>
+  <option value="6226536">Chemin Grenier Police Station</option>
+  <option value="2331939">Coromandel Police Station</option>
+  <option value="6707615">Curepipe Police Station</option>
+  <option value="2122071">Dr Jeetoo Hospital Police Post</option>
+  <option value="6655112">Dubreuil Police Station</option>
+  <option value="6763321">Eau Coulée Police Station</option>
+  <option value="6862061">ENT Police Post</option>
+  <option value="2403932">Fanfaron Police Station</option>
+  <option value="4011300">Flacq Police Station</option>
+  <option value="4136945">Flacq Hospital Police Post</option>
+  <option value="4539916">Flic en Flac Police Station</option>
+  <option value="6962669">Floreal Police Station</option>
+  <option value="2839950">Goodlands Police Station</option>
+  <option value="2011055">Government House Police Post</option>
+  <option value="2630062">Grand Baie Police Station</option>
+  <option value="6933918">Grand Bassin Police Post</option>
+  <option value="6175100">Grand Bois Police Station</option>
+  <option value="2839924">Grand Gaube Police Station</option>
+  <option value="6277480">Jawal Nehru Hospital Police Post</option>
+  <option value="6368113">L'escalier Police Station</option>
+  <option value="2341042">La Tour Koenig Police Station</option>
+  <option value="4180312">Lallmatie Police Station</option>
+  <option value="2081238" selected="selected">Line Barracks Police Station</option>
+  <option value="2455722">Long Mountain Police Station</option>
+  <option value="6315026">Mahebourg Police Station</option>
+  <option value="4332218">MBC Police Post</option>
+  <option value="6644163">Midlands Police Station</option>
+  <option value="4336512">Moka Police Station</option>
+  <option value="4335536">Montagne Blanche Police Station</option>
+  <option value="6779366">Nouvelle France Police Station</option>
+  <option value="6345409">Old Grand Port Police Station</option>
+  <option value="2868418">Pailles Police Station</option>
+  <option value="2433545">Pamplemousses Police Station</option>
+  <option value="2334409">Petite Riviere Police Station</option>
+  <option value="6965138">Phoenix Police Station</option>
+  <option value="2644240">Piton Police Station</option>
+  <option value="4713218">Plaine Champagne Police Post</option>
+  <option value="2662454">Plaine des Papayes Police Station</option>
+  <option value="6373536">Plaine Magnien Police Station</option>
+  <option value="2402585">Plaine Verte Police Station</option>
+  <option value="2634212">Pointe aux Cannonier Police Station</option>
+  <option value="2340726">Pointe aux Sables Police Station</option>
+  <option value="2129948">Pope Hennessy Police Station</option>
+  <option value="2380194">Poudre D’or Police Station</option>
+  <option value="4252156">Princess Margaret Orthopaedic Centre Police Post</option>
+  <option value="4355556">Quartier Militaire Police Station</option>
+  <option value="4252436">Quatre Bornes Police Station</option>
+  <option value="4125760">Riviere du Rempart Police Station</option>
+  <option value="6262531">Riv des Anguilles Police Station</option>
+  <option value="2171765">Roche Bois Police Station</option>
+  <option value="6279341">Rose Belle Police Station</option>
+  <option value="4542022">Rose-Hill Police Station</option>
+  <option value="4334211">St Pierre Police Station</option>
+  <option value="4253112">Sodnac Police Station</option>
+  <option value="6255446">Souillac Police Station</option>
+  <option value="2433515">SSRN Hospital Police Post</option>
+  <option value="4643010">Stanley Police Station</option>
+  <option value="2489263">Terre Rouge Police Station</option>
+  <option value="2471910">Tombeau Bay Police Station</option>
+  <option value="2618637">Triolet Police Station</option>
+  <option value="2656653">Trou aux Biches Police Station</option>
+  <option value="4802439">Trou D’eau Douce Police Station</option>
+  <option value="6964058">Vacoas Police Station</option>
+  <option value="2172109">Vallee Pitot Police Station</option>
+</select>
+ <button class="ui-btn" onclick="onCall3()" style="background-color: HSL(161, 39%, 80%) ;">Call police station</button>
+	  <button class="ui-btn" onclick="onCall4()" style="background-color: HSL(117, 52%, 74%) ;">Befrienders Suicide Prevention</button>
+ 
+ </div>
+ <div data-role="footer">																			
+ <h1>Working with SQLite</h1>
+ </div>
+</div>
+ 
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+	   
+</script>
